@@ -17,6 +17,9 @@
 - python install -r requirements.txt
 
 ### Instructions:
+0. To see the charts, run 
+generate_chart_kde() and generate_chart_bar() inside process_data.py
+
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
