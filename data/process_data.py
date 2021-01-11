@@ -33,12 +33,19 @@ def clean_data(df):
     
     return df
 
-
-
 def save_data(df, database_filename):
     engine = create_engine('sqlite:///'+ database_filename)
     df.to_sql('DisasterResponse', engine, index=False,if_exists="replace")
 
+def generate_chart_kde():
+    df = load_data(messages_filepath, categories_filepath)
+    df = clean_data(df)
+    df.plot.kde()
+
+def generate_chart_bar():
+    df = load_data(messages_filepath, categories_filepath)
+    df = clean_data(df)
+    df.plot.bar()
 
 def main():
     if len(sys.argv) == 4:
